@@ -1,18 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
+			<br>
+			<br>
+			<br>
+			<br>
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Tambah Data Post 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
+			  <br>
 			  <div class="panel-body">
 			  	<form action="{{ route('mobil.store') }}" method="post" >
 			  		{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama_mobil') ? ' has-error' : '' }}">
-			  			<label class="control-label">Nama_mobil</label>	
+			  			<label class="control-label">Nama Mobil</label>	
 			  			<input type="text" name="nama_mobil" class="form-control"  required>
 			  			@if ($errors->has('nama_mobil'))
                             <span class="help-block">
@@ -21,7 +26,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('jenis_mobil') ? ' has-error' : '' }}">
-			  			<label class="control-label">jenis_mobil</label>	
+			  			<label class="control-label">Jenis Mobil</label>	
 			  			<input type="text" name="jenis_mobil" class="form-control"  required>
 			  			@if ($errors->has('jenis_mobil'))
                             <span class="help-block">
@@ -30,7 +35,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('no_plat') ? ' has-error' : '' }}">
-			  			<label class="control-label">no_plat</label>	
+			  			<label class="control-label">Plat Nomor</label>	
 			  			<input type="text" name="no_plat" class="form-control"  required>
 			  			@if ($errors->has('no_plat'))
                             <span class="help-block">
@@ -39,7 +44,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('tahun_keluaran') ? ' has-error' : '' }}">
-			  			<label class="control-label">tahun_keluaran</label>	
+			  			<label class="control-label">Tahun Keluaran</label>	
 			  			<input type="text" name="tahun_keluaran" class="form-control"  required>
 			  			@if ($errors->has('tahun_keluaran'))
                             <span class="help-block">
@@ -48,7 +53,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('warna') ? ' has-error' : '' }}">
-			  			<label class="control-label">warna</label>	
+			  			<label class="control-label">Warna</label>	
 			  			<input type="text" name="warna" class="form-control"  required>
 			  			@if ($errors->has('warna'))
                             <span class="help-block">
@@ -57,7 +62,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('kapasitas') ? ' has-error' : '' }}">
-			  			<label class="control-label">kapasitas</label>	
+			  			<label class="control-label">Kapasitas</label>	
 			  			<input type="text" name="kapasitas" class="form-control"  required>
 			  			@if ($errors->has('kapasitas'))
                             <span class="help-block">
@@ -66,7 +71,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('perseneling') ? ' has-error' : '' }}">
-			  			<label class="control-label">perseneling</label>	
+			  			<label class="control-label">Perseneling</label>	
 			  			<input type="text" name="perseneling" class="form-control"  required>
 			  			@if ($errors->has('perseneling'))
                             <span class="help-block">
@@ -75,7 +80,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }}">
-			  			<label class="control-label">stock</label>	
+			  			<label class="control-label">Stock</label>	
 			  			<input type="text" name="stock" class="form-control"  required>
 			  			@if ($errors->has('stock'))
                             <span class="help-block">
@@ -84,7 +89,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }}">
-			  			<label class="control-label">harga</label>	
+			  			<label class="control-label">Harga</label>	
 			  			<input type="text" name="harga" class="form-control"  required>
 			  			@if ($errors->has('harga'))
                             <span class="help-block">

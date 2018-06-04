@@ -1,13 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
+			<br>
+			<br>
+			<br>
+			<br>
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Show Data Mobil 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
+			  <br>
 			  <div class="panel-body">
         			<div class="form-group">
 			  			<label class="control-label">nama_mobil</label>	

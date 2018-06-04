@@ -19,6 +19,15 @@ Route::resource('merk','MerkController');
 Route::resource('mobil','MobilController');
 Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
+
+
+Route::get('admin',function(){
+	return view('layouts.admin');
+});
+Route::get('user',function(){
+	return view('layouts.user');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

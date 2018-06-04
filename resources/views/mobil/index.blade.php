@@ -1,16 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
+<section class="card">
+<div class="card-body text-secondary">col-lg-12</div>
 <div class="row">
+
 	<div class="container">
 		<div class="col-md-12">
+			<br>
+			<br>
+
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Data Dosen
+			  <div class="panel-heading">Data Mobil
 			  	<div class="panel-title pull-right"><a href="{{ route('mobil.create') }}">Tambah</a>
 			  	</div>
 			  </div>
+		<br>
 			  <div class="panel-body">
-			  	<div class="table-responsive">
-				  <table class="table">
+			  	<div class="table-responsive m-b-40">
+				  <table class="table table-borderless table-data3">
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
@@ -41,7 +48,7 @@
 				    	<td>{{ $data->kapasitas }}</td>
 				    	<td>{{ $data->perseneling }}</td>
 				    	<td>{{ $data->stock }}</td>
-				    	<td>{{ $data->harga }}</td>
+				    	<td>Rp.{{ $data->harga }}/Hari</td>
 				    	<td>{{ $data->Merk->nama_merk }}</td>
 				    	</li></td>
 <td>
@@ -68,4 +75,5 @@
 		</div>
 	</div>
 </div>
+</section>
 @endsection
