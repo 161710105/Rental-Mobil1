@@ -17,12 +17,6 @@
                                 <li>
                                     <a href="merk">Merk</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
                             </ul>
                         </li>
                         <li>

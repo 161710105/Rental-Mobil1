@@ -28,7 +28,7 @@
 						<h2>The Twist of Healthy Yogurt</h2>
 						<p>This website template has been designed by freewebsitetemplates.com for you, for free. You can replace all this text with your own text.</p>
 					</div>
-					<img src="/assets/frontend/images/car2.jpg" alt="">
+					
 				</div>
 			</div>
 			<!-- Footer 1 -->

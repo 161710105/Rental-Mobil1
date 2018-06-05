@@ -163,10 +163,10 @@ img {
 #body.home div.header img {
 	display: block;
 	left: 50%;
-	margin: 0 auto 0 -563px;
+	margin: 0 auto 0 -400px;
 	padding: 0;
 	position: absolute;
-	width: 1126px;
+	width: 823px;
 }
 #body.home div.header div {
 	margin: 0 auto;
