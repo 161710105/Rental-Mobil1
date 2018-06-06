@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mobil extends Model
 {
-    protected $fillable = ['nama','jenis_mobil','no_plat','tahun_keluaran','warna','kapasitas','perseneling','stock','harga','merk_id'];
+    protected $fillable = ['nama_mobil','jenis_mobil','no_plat','tahun_keluaran','warna','kapasitas','perseneling','stock','harga','merk_id'];
 
 public function Merk ()
     {
@@ -19,5 +19,9 @@ public function Supir()
 public function Customer()
     {
         return $this->belongsToMany('App\Customer','pemesanans','mobil_id','customer_id');
+    }
+public function Pemesanan()
+    {
+        return $this->HasMany('App\Pemesanan','mobil_id');
     }
 }

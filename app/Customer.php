@@ -17,4 +17,8 @@ class Customer extends Model
     {
         return $this->belongsToMany('App\Supir','pemesanans','supir_id','customer_id');
     }
+    public function Pemesanan()
+    {
+        return $this->HasMany('App\Pemesanan','customer_id');
+    }
 }

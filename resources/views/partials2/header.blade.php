@@ -14,10 +14,10 @@
 						</ul>
 					</li>
 					<li class="menu">
-						<a href="blog.html">Blog</a>
+						<a href="blog.html">Go</a>
 						<ul class="secondary">
 							<li>
-								<a href="singlepost.html">Single post</a>
+								<a href="singlepost.html">Blog</a>
 							</li>
 						</ul>
 					</li>

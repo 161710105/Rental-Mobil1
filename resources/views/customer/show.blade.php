@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="row">
 	<div class="container">
@@ -20,10 +20,6 @@
 			  		<div class="form-group">
 			  			<label class="control-label">no_nik</label>	
 			  			<input type="text" name="no_nik" class="form-control" value="{{ $customer->no_nik }}"  readonly>
-			  		</div>
-			  		<div class="form-group">
-			  			<label class="control-label">no_hp</label>	
-			  			<input type="text" name="no_hp" class="form-control" value="{{ $customer->no_hp }}"  readonly>
 			  		</div>
 			  	</div>
 			</div>	

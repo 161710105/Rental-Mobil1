@@ -12,10 +12,19 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="mobil">Mobil</a>
+                                    <a href="{{ route('mobil.index') }}">Mobil</a>
                                 </li>
                                 <li>
-                                    <a href="merk">Merk</a>
+                                    <a href="{{ route('merk.index') }}">Merk</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('customer.index') }}">Customer</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('supir.index') }}">Supir</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('pemesanan.index') }}">Pemesanan</a>
                                 </li>
                             </ul>
                         </li>

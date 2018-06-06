@@ -17,4 +17,8 @@ class Supir extends Model
     {
         return $this->belongsToMany('App\Customer','pemesanans','supir_id','customer_id');
     }
+    public function Pemesanan()
+    {
+        return $this->HasMany('App\Pemesanan','supir_id');
+    }
 }

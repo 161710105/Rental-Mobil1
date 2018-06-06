@@ -15,8 +15,8 @@
 			  </div>
 			  <br>
 			  <div class="panel-body">
-			  	<div class="table-responsive">
-				  <table class="table">
+			  	<div class="table-responsive m-b-40">
+				  <table class="table table-borderless table-data3">
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>

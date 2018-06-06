@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Mobil;
+use App\Supir;
 use Session;
 use Illuminate\Http\Request;
 

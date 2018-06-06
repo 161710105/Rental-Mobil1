@@ -1,16 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
+<section class="card">
+<div class="card-body text-secondary">col-lg-12</div>
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Data Merk
+				<br>
+				<br>
+				<br>
+			  <div class="panel-heading">Data Supir
 			  	<div class="panel-title pull-right"><a href="{{ route('supir.create') }}">Tambah</a>
 			  	</div>
 			  </div>
+			  <br>
 			  <div class="panel-body">
-			  	<div class="table-responsive">
-				  <table class="table">
+			  	<div class="table-responsive m-b-40">
+				  <table class="table table-borderless table-data3">
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
@@ -56,4 +62,5 @@
 		</div>
 	</div>
 </div>
+</section>
 @endsection

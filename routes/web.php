@@ -15,11 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']],function(){
 Route::resource('merk','MerkController');
 Route::resource('mobil','MobilController');
 Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
+Route::resource('pemesanan','PemesananController');
 
+});
 
 Route::get('admin',function(){
 	return view('layouts.admin');
@@ -30,4 +33,6 @@ Route::get('user',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
