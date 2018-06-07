@@ -21,4 +21,8 @@ class Supir extends Model
     {
         return $this->HasMany('App\Pemesanan','supir_id');
     }
+    public function Booking()
+    {
+        return $this->HasMany('App\Booking','supir_id');
+    }
 }

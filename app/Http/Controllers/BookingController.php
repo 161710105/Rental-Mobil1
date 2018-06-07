@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Mobil;
+use App\Supir;
+use Session;
+
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -14,7 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $booking = Booking::with('Mobil','Supir')->get();
+        return view('booking.index',compact('booking'));
     }
 
     /**
@@ -24,7 +29,9 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $mobil = Mobil::all();
+        $supir = Supir::all();
+        return view('booking.create',compact('mobil','supir'));
     }
 
     /**
@@ -35,7 +42,23 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'tanggal_pengambilan' => 'required|',
+            'tanggal_pengembalian' => 'required|',
+            'mobil_id' => 'required|',
+            'supir_id' => 'required|'
+        ]);
+        $booking = new Booking;
+        $booking->tanggal_pengambilan = $request->tanggal_pengambilan;
+        $booking->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $booking->mobil_id = $request->mobil_id;
+        $booking->supir_id = $request->supir_id;
+        $booking->save();
+        Session::flash("flash_notification", [
+        "level"=>"success",
+        "message"=>"Berhasil menyimpan <b>$booking->customer_id</b>"
+        ]);
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -44,9 +67,10 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        return view('booking.show',compact('booking'));
     }
 
     /**
@@ -55,9 +79,14 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        $mobil = Mobil::all();
+        $selectedMobil = Booking::findOrFail($id)->mobil_id;
+        $supir = Supir::all();
+        $selectedSupir = Booking::findOrFail($id)->supir_id;
+        return view('booking.edit',compact('booking','mobil','selectedMobil','supir','selectedSupir'));
     }
 
     /**
@@ -67,9 +96,25 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'tanggal_pengambilan' => 'required|',
+            'tanggal_pengembalian' => 'required|',
+            'mobil_id' => 'required|',
+            'supir_id' => 'required|'
+        ]);
+        $booking = Booking::findOrFail($id);
+        $booking->tanggal_pengambilan = $request->tanggal_pengambilan;
+        $booking->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $booking->mobil_id = $request->mobil_id;
+        $booking->supir_id = $request->supir_id;
+        $booking->save();
+        Session::flash("flash_notification", [
+        "level"=>"success",
+        "message"=>"Berhasil menyimpan <b>$booking->mobil_id</b>"
+        ]);
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -78,8 +123,14 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        $booking->delete();
+        Session::flash("flash_notification", [
+        "level"=>"success",
+        "message"=>"Data Berhasil dihapus"
+        ]);
+        return redirect()->route('booking.index');
     }
 }

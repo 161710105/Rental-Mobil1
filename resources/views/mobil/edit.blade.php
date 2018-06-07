@@ -14,7 +14,7 @@
 			  </div>
 			  <br>
 			  <div class="panel-body">
-			  	<form action="{{ route('mobil.update',$mobil->id) }}" method="post" >
+			  	<form action="{{ route('mobil.update',$mobil->id) }}" method="post" enctype="multipart/form-data" >
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('nama_mobil') ? ' has-error' : '' }}">
@@ -99,6 +99,17 @@
                             </span>
                         @endif
 			  		</div>
+			  		<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-3">Foto</label>
+                          <div class="col-md-9 pr-1">
+                          <input type="file" name="foto" class="form-control" required="" style="background-color: #0000">
+                            @if ($errors->has('foto'))
+                              <span class="help-block">
+                                <strong>{{ $errors->first('foto') }}</strong>
+                              </span>
+                          @endif
+                          </div>
+                        </div>
 			  		<div class="form-group {{ $errors->has('merk_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Merk</label>	
 			  			<select name="merk_id" class="form-control">

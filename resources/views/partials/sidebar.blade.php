@@ -26,6 +26,8 @@
                                 <li>
                                     <a href="{{ route('pemesanan.index') }}">Pemesanan</a>
                                 </li>
+                                    <a href="{{ route('booking.index') }}">Booking</a>
+                                </li>
                             </ul>
                         </li>
                         <li>

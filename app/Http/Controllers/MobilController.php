@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mobil;
 use App\Merk;
+use File;
 use Session;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,7 @@ class MobilController extends Controller
             'perseneling' => 'required|',
             'stock' => 'required|',
             'harga' => 'required|',
+            'foto'=>'required|',
             'merk_id' => 'required'
         ]);
         $mobil = new Mobil;
@@ -61,6 +63,14 @@ class MobilController extends Controller
         $mobil->perseneling = $request->perseneling;
         $mobil->stock = $request->stock;
         $mobil->harga = $request->harga;
+        //upload foto
+        if ($request->hasFile('foto')){
+            $file = $request->file('foto');
+            $destinationPath = public_path().'/assets/image/foto_mobil/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSuccess = $file->move($destinationPath, $filename);
+            $mobil->foto = $filename;
+        }
         $mobil->merk_id = $request->merk_id;
         $mobil->save();
         Session::flash("flash_notification", [
@@ -115,6 +125,7 @@ class MobilController extends Controller
             'perseneling' => 'required|',
             'stock' => 'required|',
             'harga' => 'required|',
+            'foto' => 'required',
             'merk_id' => 'required'
         ]);
         $mobil = Mobil::findOrFail($id);
@@ -127,6 +138,28 @@ class MobilController extends Controller
         $mobil->perseneling = $request->perseneling;
         $mobil->stock = $request->stock;
         $mobil->harga = $request->harga;
+
+        //edit upload foto
+
+       if ($request->hasFile('foto')){
+            $file = $request->file('foto');
+            $destinationPath = public_path().'/assets/image/foto_mobil/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $uploadSuccess = $file->move($destinationPath, $filename);
+
+                //Hapus Foto Lama jika ada
+                if($mobil->foto){
+                    $old_foto = $mobil->foto;
+                    $filepath = public_path(). DIRECTORY_SEPARATOR .'/assets/image/foto_mobil'.DIRECTORY_SEPARATOR.$mobil->foto;
+                    try{
+                        File::delete($filepath);
+                    } catch (FileNotFoundException $e){
+                    //File yang sudah dihapus tidak ada
+                    }
+                }
+            $mobil->foto = $filename;
+        }
+        
         $mobil->merk_id = $request->merk_id;
         $mobil->save();
         Session::flash("flash_notification", [
@@ -145,6 +178,16 @@ class MobilController extends Controller
     public function destroy($id)
     {  
         $mobil =Mobil::findOrFail($id);
+        if ($mobil->foto){
+
+            $old_foto = $mobil->foto;
+            $filepath = public_path().DIRECTORY_SEPARATOR.'/assets/image/foto'.DIRECTORY_SEPARATOR.$mobil->foto;
+            try{
+                File::delete($filepath);
+            }catch (FileNotFoundException $e){
+
+            }
+        }
         $mobil->delete();
         Session::flash("flash_notification", [
         "level"=>"success",

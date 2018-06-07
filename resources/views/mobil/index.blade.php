@@ -29,6 +29,7 @@
 					  <th>Perseneling</th>
 					  <th>Stock</th>
 					  <th>Harga</th>
+					  <th>Foto</th>
 					  <th>Merk</th>
 					  <th colspan="3">Action</th>
 			  		</tr>
@@ -48,6 +49,7 @@
 				    	<td>{{ $data->perseneling }}</td>
 				    	<td>{{ $data->stock }}</td>
 				    	<td>Rp.{{ $data->harga }}/Hari</td>
+				    	<td><img src="{{asset('/assets/image/foto_mobil/'.$data->foto.'')}}"></td>
 				    	<td>{{ $data->Merk->nama_merk }}</td>
 				    	</li></td>
 <td>

@@ -21,14 +21,13 @@ Route::resource('mobil','MobilController');
 Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
 Route::resource('pemesanan','PemesananController');
+Route::resource('booking','BookingController');
+Route::resource('user','UsersController');
 
 });
+Route::group(['prefix'=>'member','middleware'=>['auth','role:member|admin']],function(){
+Route::resource('user','UsersController');
 
-Route::get('admin',function(){
-	return view('layouts.admin');
-});
-Route::get('user',function(){
-	return view('layouts.user');
 });
 Auth::routes();
 
