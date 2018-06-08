@@ -9,8 +9,8 @@
 			<br>
 			<br>
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Data Merk
-			  	<div class="panel-title pull-right"><a href="{{ route('merk.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Merk</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('merk.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 			  <br>
@@ -22,7 +22,7 @@
 			  		  <th>No</th>
 					  <th>Nama Merk</th>
 					  <th>Nama Mobil</th>
-					  <th colspan="3">Action</th>
+					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -35,9 +35,6 @@
 				    	<td>@foreach($data->Mobil as $merk)<li>{{ $merk->nama_mobil }}@endforeach</li></td>
 <td>
 	<a class="btn btn-warning" href="{{ route('merk.edit',$data->id) }}">Edit</a>
-</td>
-<td>
-	<a href="{{ route('merk.show',$data->id) }}" class="btn btn-success">Show</a>
 </td>
 <td>
 	<form method="post" action="{{ route('merk.destroy',$data->id) }}">

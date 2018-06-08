@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+<section class="card">
+<div class="card-body text-secondary">col-lg-12</div>
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
-			<br>
-			<br>
 			<br>
 			<br>
 			<div class="panel panel-primary">
@@ -102,7 +102,14 @@
 			  		<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
                           <label class="control-label col-md-3 col-sm-3 col-xs-3">Foto</label>
                           <div class="col-md-9 pr-1">
-                          <input type="file" name="foto" class="form-control" required="" style="background-color: #0000">
+                          <input type="file" name="foto" class="form-control" value="{{ $mobil->foto }}" style="background-color: #0000">
+                            @if(isset($mobil)&& $mobil->foto)
+                            <p>
+                            	<br>
+                            	<img src="{{asset('assets/image/foto_mobil/'.$mobil->foto)}}"
+                            	style="width:350px; height: 300px;">
+                            </p>
+                            @endif
                             @if ($errors->has('foto'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('foto') }}</strong>
@@ -132,4 +139,5 @@
 		</div>
 	</div>
 </div>
+</section>
 @endsection

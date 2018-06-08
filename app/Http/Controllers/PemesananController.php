@@ -46,16 +46,22 @@ class PemesananController extends Controller
         $this->validate($request,[
             'tanggal_pengambilan' => 'required|',
             'tanggal_pengembalian' => 'required|',
+            'jumlah_hari' => 'required|',
+            'denda' => 'required|',
             'mobil_id' => 'required|',
             'customer_id' => 'required|',
-            'supir_id' => 'required|'
+            'supir_id' => 'required|',
+            'total_harga' => 'required|'
         ]);
         $pemesanan = new Pemesanan;
         $pemesanan->tanggal_pengambilan = $request->tanggal_pengambilan;
         $pemesanan->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $pemesanan->jumlah_hari = $request->jumlah_hari;
+        $pemesanan->demda = $request->demda;
         $pemesanan->mobil_id = $request->mobil_id;
         $pemesanan->customer_id = $request->customer_id;
         $pemesanan->supir_id = $request->supir_id;
+        $pemesanan->total_harga = $request->total_harga;
         $pemesanan->save();
         Session::flash("flash_notification", [
         "level"=>"success",
@@ -106,16 +112,22 @@ class PemesananController extends Controller
          $this->validate($request,[
             'tanggal_pengambilan' => 'required|',
             'tanggal_pengembalian' => 'required|',
+            'jumlah_hari' => 'required|',
+            'total_harga' => 'required|',
             'mobil_id' => 'required|',
             'customer_id' => 'required|',
-            'supir_id' => 'required|'
+            'supir_id' => 'required|',
+            'total_harga' => 'required|'
         ]);
         $pemesanan = Pemesanan::findOrFail($id);
         $pemesanan->tanggal_pengambilan = $request->tanggal_pengambilan;
         $pemesanan->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $pemesanan->jumlah_hari = $request->jumlah_hari;
+        $pemesanan->denda = $request->denda;
         $pemesanan->mobil_id = $request->mobil_id;
         $pemesanan->customer_id = $request->customer_id;
         $pemesanan->supir_id = $request->supir_id;
+        $pemesanan->total_harga = $request->total_harga;
         $pemesanan->save();
         Session::flash("flash_notification", [
         "level"=>"success",

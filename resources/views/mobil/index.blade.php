@@ -9,8 +9,8 @@
 			<br>	
 			<br>
 			<br>
-			  <div class="panel-heading">Data Mobil
-			  	<div class="panel-title pull-right"><a href="{{ route('mobil.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Mobil</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('mobil.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 		<br>
@@ -31,7 +31,7 @@
 					  <th>Harga</th>
 					  <th>Foto</th>
 					  <th>Merk</th>
-					  <th colspan="3">Action</th>
+					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -54,9 +54,6 @@
 				    	</li></td>
 <td>
 	<a class="btn btn-warning" href="{{ route('mobil.edit',$data->id) }}">Edit</a>
-</td>
-<td>
-	<a href="{{ route('mobil.show',$data->id) }}" class="btn btn-success">Show</a>
 </td>
 <td>
 	<form method="post" action="{{ route('mobil.destroy',$data->id) }}">

@@ -45,14 +45,18 @@ class BookingController extends Controller
         $this->validate($request,[
             'tanggal_pengambilan' => 'required|',
             'tanggal_pengembalian' => 'required|',
+            'jumlah_hari'=>'required|',
             'mobil_id' => 'required|',
-            'supir_id' => 'required|'
+            'supir_id' => 'required|',
+            'total_harga'=>'required|'
         ]);
         $booking = new Booking;
         $booking->tanggal_pengambilan = $request->tanggal_pengambilan;
         $booking->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $booking->jumlah_hari = $request->jumlah_hari;
         $booking->mobil_id = $request->mobil_id;
         $booking->supir_id = $request->supir_id;
+        $booking->total_harga = $request->total_harga;
         $booking->save();
         Session::flash("flash_notification", [
         "level"=>"success",
@@ -101,14 +105,18 @@ class BookingController extends Controller
         $this->validate($request,[
             'tanggal_pengambilan' => 'required|',
             'tanggal_pengembalian' => 'required|',
+            'jumlah_hari' => 'required|',
             'mobil_id' => 'required|',
-            'supir_id' => 'required|'
+            'supir_id' => 'required|',
+            'total_harga' => 'required|'
         ]);
         $booking = Booking::findOrFail($id);
         $booking->tanggal_pengambilan = $request->tanggal_pengambilan;
         $booking->tanggal_pengembalian = $request->tanggal_pengembalian;
+        $booking->jumlah_hari = $request->jumlah_hari;
         $booking->mobil_id = $request->mobil_id;
         $booking->supir_id = $request->supir_id;
+        $booking->total_harga = $request->total_harga;
         $booking->save();
         Session::flash("flash_notification", [
         "level"=>"success",

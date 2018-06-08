@@ -22,6 +22,8 @@ class CreateBookingsTable extends Migration
             $table->foreign('supir_id')->references('id')->on('supirs')->ondelete('cascade');
             $table->date('tanggal_pengambilan');
             $table->date('tanggal_pengembalian');
+            $table->integer('jumlah_hari');
+            $table->integer('total_harga');
             $table->timestamps();
         });
     }

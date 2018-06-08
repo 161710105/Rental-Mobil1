@@ -17,6 +17,9 @@ class CreatePemesanansTable extends Migration
             $table->increments('id');
             $table->date('tanggal_pengambilan');
             $table->date('tanggal_pengembalian');
+            $table->integer('jumlah_hari');
+            $table->integer('denda');
+            $table->integer('total_harga');
 
             $table->UnsignedInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')->ondelete('cascade');

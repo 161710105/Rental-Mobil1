@@ -5,11 +5,16 @@
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
+			<br>
+			<br>
+			<br>
+			<br>
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Tambah Data Supir 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
+			  <br>
 			  <div class="panel-body">
 			  	<form action="{{ route('supir.store') }}" method="post" >
 			  		{{ csrf_field() }}
@@ -23,7 +28,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
-			  			<label class="control-label">alamat</label>	
+			  			<label class="control-label">Alamat</label>	
 			  			<input type="text" name="alamat" class="form-control"  required>
 			  			@if ($errors->has('alamat'))
                             <span class="help-block">
@@ -32,7 +37,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('umur') ? ' has-error' : '' }}">
-			  			<label class="control-label">umur</label>	
+			  			<label class="control-label">Umur</label>	
 			  			<input type="text" name="umur" class="form-control"  required>
 			  			@if ($errors->has('umur'))
                             <span class="help-block">
@@ -41,7 +46,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }}">
-			  			<label class="control-label">harga</label>	
+			  			<label class="control-label">Harga</label>	
 			  			<input type="text" name="harga" class="form-control"  required>
 			  			@if ($errors->has('harga'))
                             <span class="help-block">

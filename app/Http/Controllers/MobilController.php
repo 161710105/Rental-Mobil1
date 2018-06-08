@@ -125,7 +125,7 @@ class MobilController extends Controller
             'perseneling' => 'required|',
             'stock' => 'required|',
             'harga' => 'required|',
-            'foto' => 'required',
+            'foto' => 'image|max:2048',
             'merk_id' => 'required'
         ]);
         $mobil = Mobil::findOrFail($id);

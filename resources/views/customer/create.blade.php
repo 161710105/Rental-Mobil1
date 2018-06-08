@@ -5,11 +5,14 @@
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
+			<br>
+			<br>
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Tambah Data Customer 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
+			  <br>
 			  <div class="panel-body">
 			  	<form action="{{ route('customer.store') }}" method="post" >
 			  		{{ csrf_field() }}
@@ -23,7 +26,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
-			  			<label class="control-label">alamat</label>	
+			  			<label class="control-label">Alamat</label>	
 			  			<input type="text" name="alamat" class="form-control"  required>
 			  			@if ($errors->has('alamat'))
                             <span class="help-block">
@@ -32,7 +35,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('no_nik') ? ' has-error' : '' }}">
-			  			<label class="control-label">no_nik</label>	
+			  			<label class="control-label">No NIK</label>	
 			  			<input type="text" name="no_nik" class="form-control"  required>
 			  			@if ($errors->has('no_nik'))
                             <span class="help-block">
@@ -41,7 +44,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('no_hp') ? ' has-error' : '' }}">
-			  			<label class="control-label">no_hp</label>	
+			  			<label class="control-label">NO HP</label>	
 			  			<input type="text" name="no_hp" class="form-control"  required>
 			  			@if ($errors->has('no_hp'))
                             <span class="help-block">

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    protected $fillable = ['tanggal_pengambilan','tanggal_pengembalian','mobil_id','supir_id'];
+    protected $fillable = ['tanggal_pengambilan','tanggal_pengembalian','jumlah_hari','mobil_id','supir_id','total_harga'];
     public $timestamps = true;
 
     public function Mobil() 

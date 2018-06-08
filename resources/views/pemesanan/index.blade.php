@@ -9,8 +9,8 @@
 			<br>	
 			<br>
 			<br>
-			  <div class="panel-heading">Data Pemesanan
-			  	<div class="panel-title pull-right"><a href="{{ route('pemesanan.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Pemesanan</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('pemesanan.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 		<br>
@@ -22,10 +22,13 @@
 			  		  <th>No</th>
 					  <th>Tanggal Pengambilan</th>
 					  <th>Tanggal Pengembalian</th>
+					  <th>Jumlah Hari</th>
+					  <th>Denda</th>
 					  <th>Mobil</th>
 					  <th>Customer</th>
 					  <th>Supir</th>
-					  <th colspan="3">Action</th>
+					  <th>Total Harga</th>
+					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -36,15 +39,15 @@
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->tanggal_pengambilan }}</td>
 				    	<td>{{ $data->tanggal_pengembalian }}</td>
+				    	<td>{{ $data->jumlah_hari }}</td>
+				    	<td>{{ $data->denda }}</td>
 				    	<td>{{ $data->Mobil->nama_mobil }}</td>
 				    	<td>{{ $data->Customer->nama }}</td>
 				    	<td>{{ $data->Supir->nama }}</td>
+				    	<td>{{ $data->total_harga }}</td>
 				    	</li></td>
 <td>
 	<a class="btn btn-warning" href="{{ route('pemesanan.edit',$data->id) }}">Edit</a>
-</td>
-<td>
-	<a href="{{ route('pemesanan.show',$data->id) }}" class="btn btn-success">Show</a>
 </td>
 <td>
 	<form method="post" action="{{ route('pemesanan.destroy',$data->id) }}">

@@ -232,7 +232,7 @@ audio {
 		
 		<div class="page-ms">
 			<p class="page-msg">Maaf, Halaman yang anda cari tidak ditemukan</p>
-			<a class="go-back" href="{{ route('mobil.index') }}">Go Back</a>
+			<a class="go-back" href="{{ route('user.index') }}">Go Back</a>
 		</div>
 </div>
 	

@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+<section class="card">
+<div class="card-body text-secondary">col-lg-12</div>
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
-			<br>
-			<br>
 			<br>
 			<br>
 			<div class="panel panel-primary">
@@ -36,6 +36,15 @@
                             </span>
                         @endif
 			  		</div>
+			  		<div class="form-group {{ $errors->has('jumlah_hari') ? ' has-error' : '' }}">
+			  			<label class="control-label">Jumlah Hari</label>	
+			  			<input type="number" name="jumlah_hari" class="form-control" value="{{ $booking->jumlah_hari }}" required>
+			  			@if ($errors->has('jumlah_hari'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('jumlah_hari') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
 			  		<div class="form-group {{ $errors->has('mobil_id') ? ' has-error' : '' }}">
 			  			<label class="control-label">Mobil</label>	
 			  			<select name="mobil_id" class="form-control">
@@ -62,6 +71,15 @@
                             </span>
                         @endif
 			  		</div>
+			  		<div class="form-group {{ $errors->has('total_harga') ? ' has-error' : '' }}">
+			  			<label class="control-label">Tanggal Pengambilan</label>	
+			  			<input type="text" name="total_harga" class="form-control" value="{{ $booking->total_harga }}" required>
+			  			@if ($errors->has('total_harga'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('total_harga') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Simpan</button>
 			  		</div>
@@ -71,4 +89,5 @@
 		</div>
 	</div>
 </div>
+</section>
 @endsection

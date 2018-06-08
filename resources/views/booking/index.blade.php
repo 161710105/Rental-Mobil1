@@ -9,8 +9,8 @@
 			<br>	
 			<br>
 			<br>
-			  <div class="panel-heading">Data Booking
-			  	<div class="panel-title pull-right"><a href="{{ route('booking.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Booking</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('booking.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 		<br>
@@ -22,9 +22,11 @@
 			  		  <th>No</th>
 					  <th>Tanggal Pengambilan</th>
 					  <th>Tanggal Pengembalian</th>
+					  <th>Jumlah Hari</th>
 					  <th>Mobil</th>
 					  <th>Supir</th>
-					  <th colspan="3">Action</th>
+					  <th>Total Harga</th>
+					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -35,14 +37,13 @@
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->tanggal_pengambilan }}</td>
 				    	<td>{{ $data->tanggal_pengembalian }}</td>
+				    	<td>{{ $data->jumlah_hari }}</td>
 				    	<td>{{ $data->Mobil->nama_mobil }}</td>
 				    	<td>{{ $data->Supir->nama }}</td>
+				    	<td>{{ $data->total_harga }}</td>
 				    	</li></td>
 <td>
 	<a class="btn btn-warning" href="{{ route('booking.edit',$data->id) }}">Edit</a>
-</td>
-<td>
-	<a href="{{ route('booking.show',$data->id) }}" class="btn btn-success">Show</a>
 </td>
 <td>
 	<form method="post" action="{{ route('booking.destroy',$data->id) }}">

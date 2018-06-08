@@ -9,8 +9,8 @@
 				<br>
 				<br>
 				<br>
-			  <div class="panel-heading">Data Customer
-			  	<div class="panel-title pull-right"><a href="{{ route('customer.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Customer</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('customer.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 			  <br>
@@ -24,7 +24,7 @@
 					  <th>Alamat</th>
 					  <th>No NIK</th>
 					  <th>No Hp</th>
-					  <th colspan="3">Action</th>
+					  <th colspan="2">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -40,9 +40,6 @@
 				    	
 <td>
 	<a class="btn btn-warning" href="{{ route('customer.edit',$data->id) }}">Edit</a>
-</td>
-<td>
-	<a href="{{ route('customer.show',$data->id) }}" class="btn btn-success">Show</a>
 </td>
 <td>
 	<form method="post" action="{{ route('customer.destroy',$data->id) }}">
