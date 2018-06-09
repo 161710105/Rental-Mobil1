@@ -43,6 +43,7 @@
 				    	<td>{{ $data->total_harga }}</td>
 				    	</li></td>
 <td>
+
 	<a class="btn btn-warning" href="{{ route('booking.edit',$data->id) }}">Edit</a>
 </td>
 <td>

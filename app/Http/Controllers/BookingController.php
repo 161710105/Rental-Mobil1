@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Booking;
 use App\Mobil;
 use App\Supir;
+use Carbon\Carbon;
 use Session;
 
 use Illuminate\Http\Request;
@@ -56,7 +57,12 @@ class BookingController extends Controller
         $booking->jumlah_hari = $request->jumlah_hari;
         $booking->mobil_id = $request->mobil_id;
         $booking->supir_id = $request->supir_id;
-        $booking->total_harga = $request->total_harga;
+        $awal = new Carbon($request->tanggal_pengambilan);
+        $akhir = new Carbon($request->tanggal_pengembalian);
+        $hasil = "{$awal->diffInDays($akhir)}";
+        $booking->jumlah_hari = $hasil;
+
+
         $booking->save();
         Session::flash("flash_notification", [
         "level"=>"success",

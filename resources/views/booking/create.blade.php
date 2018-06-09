@@ -26,7 +26,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('tanggal_pengembalian') ? ' has-error' : '' }}">
-			  			<label class="control-label">Jenis Mobil</label>	
+			  			<label class="control-label">Tanggal Pengembalian</label>	
 			  			<input type="date" name="tanggal_pengembalian" class="form-control"  required>
 			  			@if ($errors->has('tanggal_pengembalian'))
                             <span class="help-block">
@@ -35,8 +35,10 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('jumlah_hari') ? ' has-error' : '' }}">
-			  			<label class="control-label">Jumlah Hari</label>	
-			  			<input type="number" name="jumlah_hari" class="form-control"  required>
+			  			<label class="control-label">Jumlah Hari</label>
+					
+
+			  			<input type="number" name="jumlah_hari" class="form-control" required >
 			  			@if ($errors->has('jumlah_hari'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('jumlah_hari') }}</strong>
@@ -70,7 +72,7 @@
                         @endif
 			  		</div>
 			  		<div class="form-group {{ $errors->has('total_harga') ? ' has-error' : '' }}">
-			  			<label class="control-label">Tanggal Pengambilan</label>	
+			  			<label class="control-label">Total Harga</label>	
 			  			<input type="text" name="total_harga" class="form-control"  required>
 			  			@if ($errors->has('total_harga'))
                             <span class="help-block">
@@ -90,4 +92,7 @@
 	</div>
 </div>
 </section>
+<script type="text/javascript">
+	
+</script>
 @endsection
